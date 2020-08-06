@@ -12,5 +12,7 @@ namespace kafkaAndDbPairing.domain.data
         public DbSet<kafkaAndDbPairing.domain.entity.Order> Orders { get; set; }
 
         public DbSet<kafkaAndDbPairing.domain.entity.OrderDetail> OrderDetails { get; set; }
+
+        public DbSet<kafkaAndDbPairing.domain.entity.OrderLog> OrderLogs { get; set; }
     }
 }

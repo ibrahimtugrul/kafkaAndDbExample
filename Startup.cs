@@ -35,7 +35,12 @@ namespace kafkaAndDbPairing
             
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IOrderDetailService, OrderDetailService>();
-            
+
+            services.AddScoped<IOrderLogRepository, OrderLogRepository>();
+
+            services.AddSingleton<IOrderCreatedProducer, OrderCreatedProducer>();
+            services.AddScoped<IOrderCreatedConsumer, OrderCreatedConsumer>();
+
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderService, OrderService>();
 

@@ -9,11 +9,15 @@ namespace kafkaAndDbPairing.domain.service
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IOrderDetailRepository _orderDetailRepository;
+        private readonly IOrderCreatedProducer _orderCreatedProducer;
+        private readonly IOrderCreatedConsumer _orderCreatedConsumer;
 
-        public OrderService(IOrderRepository orderRepository, IOrderDetailRepository orderDetailRepository)
+        public OrderService(IOrderRepository orderRepository, IOrderDetailRepository orderDetailRepository, IOrderCreatedProducer orderCreatedProducer, IOrderCreatedConsumer orderCreatedConsumer)
         {
             _orderRepository = orderRepository;
             _orderDetailRepository = orderDetailRepository;
+            _orderCreatedProducer = orderCreatedProducer;
+            _orderCreatedConsumer = orderCreatedConsumer;
         }
 
         public async Task<Order> CreateOrderAsync(Order order)
@@ -22,6 +26,10 @@ namespace kafkaAndDbPairing.domain.service
                 throw new Exception("Order must have order details.");
 
             var createdOrder = await _orderRepository.CreateOrderAsync(order);
+
+            await _orderCreatedProducer.Produce(createdOrder);
+
+            await _orderCreatedConsumer.ConsumeAsync();
 
             return createdOrder;
         }
