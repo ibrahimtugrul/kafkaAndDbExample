@@ -22,8 +22,6 @@ namespace kafkaAndDbPairing.domain.service
                 throw new Exception("Order must have order details.");
 
             var createdOrder = await _orderRepository.CreateOrderAsync(order);
-            
-            await _orderDetailRepository.CreateOrderDetailsAsync(createdOrder);
 
             return createdOrder;
         }

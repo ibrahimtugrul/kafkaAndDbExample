@@ -13,9 +13,10 @@ namespace kafkaAndDbPairing.Controllers
         private readonly IOrderDetailService _orderDetailService;
         private readonly IOrderService _orderService;
 
-        public OrdersController(IOrderDetailService orderDetailService)
+        public OrdersController(IOrderDetailService orderDetailService, IOrderService orderService)
         {
             _orderDetailService = orderDetailService;
+            _orderService = orderService;
         }
 
         [HttpGet("{id}/detail")]

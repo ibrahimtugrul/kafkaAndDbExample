@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using kafkaAndDbPairing.domain.data;
 using kafkaAndDbPairing.domain.repository;
 using kafkaAndDbPairing.domain.service;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +30,8 @@ namespace kafkaAndDbPairing
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
+                    o => o.SetPostgresVersion(9, 6)));
             
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IOrderDetailService, OrderDetailService>();

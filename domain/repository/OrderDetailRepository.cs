@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using kafkaAndDbPairing.domain.data;
 
 namespace kafkaAndDbPairing.domain.repository
 {
@@ -24,12 +25,14 @@ namespace kafkaAndDbPairing.domain.repository
         {
             foreach (var orderDetail in order.OrderDetails)
             {
+                orderDetail.OrderId = order.Id;
+
                 await _context
                     .OrderDetails
                     .AddAsync(orderDetail);
-            }
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

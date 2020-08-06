@@ -12,7 +12,8 @@ namespace kafkaAndDbPairing.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false),
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ItemCount = table.Column<long>(nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false)
@@ -26,7 +27,8 @@ namespace kafkaAndDbPairing.Migrations
                 name: "OrderDetails",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false),
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     OrderId = table.Column<long>(nullable: false),
                     UnitPrice = table.Column<decimal>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
