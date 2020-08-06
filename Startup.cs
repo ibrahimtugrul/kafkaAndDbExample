@@ -30,13 +30,13 @@ namespace kafkaAndDbPairing
         {
             services.AddDbContext<DataContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<IProducerService, ProducerService>();
-            services.AddSingleton<IConsumerService, ConsumerService>();
-            services.AddSingleton<IEmployeeProducerService, EmployeeProducerService>();
-            services.AddSingleton<IEmployeeConsumerService, EmployeeConsumerService>();
+            
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IOrderDetailService, OrderDetailService>();
             
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+
             services.AddControllers();
         }
 

@@ -10,8 +10,8 @@ using kafkaAndDbPairing;
 namespace kafkaAndDbPairing.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200805105951_initial")]
-    partial class initial
+    [Migration("20200806114408_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,24 +20,6 @@ namespace kafkaAndDbPairing.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            modelBuilder.Entity("kafkaAndDbPairing.domain.entity.Employee", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employee");
-                });
 
             modelBuilder.Entity("kafkaAndDbPairing.domain.entity.Order", b =>
                 {
@@ -84,31 +66,6 @@ namespace kafkaAndDbPairing.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetails");
-                });
-
-            modelBuilder.Entity("kafkaAndDbPairing.domain.entity.Product", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<long>("CategoryId")
-                        .HasColumnName("categoryid")
-                        .HasColumnType("bigint");
-
-                    b.Property<double>("Price")
-                        .HasColumnName("price")
-                        .HasColumnType("double precision");
-
-                    b.Property<string>("Title")
-                        .HasColumnName("title")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("prodcut");
                 });
 
             modelBuilder.Entity("kafkaAndDbPairing.domain.entity.OrderDetail", b =>

@@ -15,9 +15,21 @@ namespace kafkaAndDbPairing.domain.repository
             _context = context;
         }
 
-        public List<OrderDetail> GetOrderDetailByOrderId(long OrderId)
+        public List<OrderDetail> GetOrderDetailByOrderId(long orderId)
         {
-            return _context.OrderDetails.Where(x=> x.OrderId == OrderId).ToList();
+            return _context.OrderDetails.Where(x=> x.OrderId == orderId).ToList();
+        }
+
+        public async Task CreateOrderDetailsAsync(Order order)
+        {
+            foreach (var orderDetail in order.OrderDetails)
+            {
+                await _context
+                    .OrderDetails
+                    .AddAsync(orderDetail);
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }

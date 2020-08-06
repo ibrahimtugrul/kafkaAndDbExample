@@ -3,8 +3,8 @@ using kafkaAndDbPairing.domain.entity;
 
 namespace kafkaAndDbPairing.domain.service
 {
-    public interface IProducerService
+    public interface IOrderService
     {
-        public Task PublishAsync(Product product);
+        Task<Order> CreateOrderAsync(Order order);
     }
 }

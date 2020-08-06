@@ -8,6 +8,7 @@ namespace kafkaAndDbPairing.domain.repository
 {
     public interface IOrderDetailRepository
     {
-        public List<OrderDetail> GetOrderDetailByOrderId(long OrderId);
+        public List<OrderDetail> GetOrderDetailByOrderId(long orderId);
+        Task CreateOrderDetailsAsync(Order order);
     }
 }

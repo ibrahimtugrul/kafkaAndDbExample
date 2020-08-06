@@ -10,13 +10,8 @@ namespace kafkaAndDbPairing
             
         }
 
-        public DbSet<Product> Products { get; set; }
-
-        public DbSet<kafkaAndDbPairing.domain.entity.Employee> Employee { get; set; }
-
         public DbSet<kafkaAndDbPairing.domain.entity.Order> Orders { get; set; }
 
         public DbSet<kafkaAndDbPairing.domain.entity.OrderDetail> OrderDetails { get; set; }
-
     }
 }
