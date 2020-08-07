@@ -1,7 +1,5 @@
-﻿using System;
+﻿using kafkaAndDbPairing.domain.entity;
 using System.Text.Json;
-using Confluent.Kafka;
-using kafkaAndDbPairing.domain.entity;
 
 namespace kafkaAndDbPairing.domain.service
 {
@@ -9,39 +7,11 @@ namespace kafkaAndDbPairing.domain.service
     {
         public Customer Consume()
         {
-            var config = new ConsumerConfig
-            {
-                BootstrapServers = "localhost:9092",
-                GroupId = "customer-consumer",
-                AutoOffsetReset = AutoOffsetReset.Earliest
-            };
-            using var consumer = new ConsumerBuilder<string, string>(config).Build();
-            
-            var partition = new Partition(0);
-            var topicPartition = new TopicPartition("CustomerCreatedEvent", partition);
-            
-            consumer.Assign(topicPartition);
+            var consumer = new Consumer<string, string>("CustomerCreatedEvent", 0, "localhost:9092");
 
-            while (true)
-            {
-                try
-                {
-                    var result = consumer.Consume();
+            var result = consumer.Consume();
 
-                    if (result.IsPartitionEOF)
-                        break;
-
-                    var value = result.Message.Value;
-
-                    return JsonSerializer.Deserialize<Customer>(value);
-                }
-                catch
-                {
-                    throw;
-                }
-            }
-
-            return null;
+            return JsonSerializer.Deserialize<Customer>(result);
         }
     }
 }

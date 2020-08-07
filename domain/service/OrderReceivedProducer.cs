@@ -27,22 +27,8 @@ namespace kafkaAndDbPairing.domain.service
                 Customer = customer,
                 Order = JsonSerializer.Deserialize<Order>(orderLog.Event)
             };
-
-            var config = new ProducerConfig
-            {
-                BootstrapServers = "localhost:9092"
-            };
-
-            var partition = new Partition(0);
-            var topicPartition = new TopicPartition("OrderReceivedEvent", partition);
-
-            using var producer = new ProducerBuilder<string, string>(config).Build();
-
-            producer.Produce(topicPartition, new Message<string, string>
-            {
-                Key = $"Order{orderReceivedModel.Order.Id}Customer{orderReceivedModel.Customer.Id}",
-                Value = JsonSerializer.Serialize(orderReceivedModel)
-            });
+            var producer = new Producer<string, string>("OrderReceivedEvent", 0, "localhost:9092");
+            producer.Produce($"Order{orderReceivedModel.Order.Id}Customer{orderReceivedModel.Customer.Id}", JsonSerializer.Serialize(orderReceivedModel));
         }
     }
 }
