@@ -9,5 +9,7 @@ namespace kafkaAndDbPairing.domain.repository
     public interface IOrderLogRepository
     {
         public Task CreateOrderLog(OrderLog orderLog);
+
+        public OrderLog ReadOrderLog();
     }
 }

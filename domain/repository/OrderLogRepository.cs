@@ -21,5 +21,12 @@ namespace kafkaAndDbPairing.domain.repository
             await _context.OrderLogs.AddAsync(orderLog);
             await _context.SaveChangesAsync();
         }
+
+        public OrderLog ReadOrderLog()
+        {
+            return _context
+                .OrderLogs
+                .FirstOrDefault();
+        }
     }
 }

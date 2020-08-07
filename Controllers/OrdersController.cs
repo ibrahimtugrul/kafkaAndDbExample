@@ -12,11 +12,22 @@ namespace kafkaAndDbPairing.Controllers
     {
         private readonly IOrderDetailService _orderDetailService;
         private readonly IOrderService _orderService;
+        private readonly ICustomerProducer _customerProducer;
+        private readonly ICustomerConsumer _customerConsumer;
+        private readonly IOrderReceivedProducer _orderReceivedProducer;
 
-        public OrdersController(IOrderDetailService orderDetailService, IOrderService orderService)
+        public OrdersController(
+            IOrderDetailService orderDetailService, 
+            IOrderService orderService, 
+            ICustomerProducer customerProducer, 
+            ICustomerConsumer customerConsumer, 
+            IOrderReceivedProducer orderReceivedProducer)
         {
             _orderDetailService = orderDetailService;
             _orderService = orderService;
+            _customerProducer = customerProducer;
+            _customerConsumer = customerConsumer;
+            _orderReceivedProducer = orderReceivedProducer;
         }
 
         [HttpGet("{id}/detail")]
@@ -30,6 +41,11 @@ namespace kafkaAndDbPairing.Controllers
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
             var createdOrder = await _orderService.CreateOrderAsync(order);
+            
+            _customerProducer.Produce();
+            
+
+            _orderReceivedProducer.Produce();
 
             return Ok(createdOrder);
         }

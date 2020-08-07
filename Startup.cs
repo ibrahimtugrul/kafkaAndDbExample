@@ -1,19 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using kafkaAndDbPairing.domain.data;
 using kafkaAndDbPairing.domain.repository;
 using kafkaAndDbPairing.domain.service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace kafkaAndDbPairing
 {
@@ -43,6 +36,12 @@ namespace kafkaAndDbPairing
 
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderService, OrderService>();
+
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerConsumer, CustomerConsumer>();
+            services.AddScoped<ICustomerProducer, CustomerProducer>();
+
+            services.AddScoped<IOrderReceivedProducer, OrderReceivedProducer>();
 
             services.AddControllers();
         }
