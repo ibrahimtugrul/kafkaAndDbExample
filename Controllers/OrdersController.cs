@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace kafkaAndDbPairing.Controllers
 {
-    [Route("orders")]
-    [ApiController]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderDetailService _orderDetailService;
