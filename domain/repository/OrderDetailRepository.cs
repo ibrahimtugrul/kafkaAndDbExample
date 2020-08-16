@@ -18,7 +18,10 @@ namespace kafkaAndDbPairing.domain.repository
 
         public List<OrderDetail> GetOrderDetailByOrderId(long orderId)
         {
-            return _context.OrderDetails.Where(x=> x.OrderId == orderId).ToList();
+            return _context
+                .OrderDetails
+                .Where(x=> x.OrderId == orderId)
+                .ToList();
         }
 
         public async Task CreateOrderDetailsAsync(Order order)
