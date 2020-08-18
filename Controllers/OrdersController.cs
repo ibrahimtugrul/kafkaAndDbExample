@@ -6,6 +6,7 @@ using kafkaAndDbPairing.Domain.Entity;
 
 namespace kafkaAndDbPairing.Controllers
 {
+    [Route("orders/")]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderDetailService _orderDetailService;
@@ -32,6 +33,7 @@ namespace kafkaAndDbPairing.Controllers
         public ActionResult<List<OrderDetail>> GetOrderDetail([FromRoute] long id)
         {
             var orderDetail = _orderDetailService.GetOrderDetailByOrderId(id);
+            
             return Ok(orderDetail);
         }
 
@@ -42,7 +44,6 @@ namespace kafkaAndDbPairing.Controllers
             
             _customerProducer.Produce();
             
-
             _orderReceivedProducer.Produce();
 
             return Ok(createdOrder);

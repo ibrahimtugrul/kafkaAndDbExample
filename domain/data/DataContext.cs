@@ -7,7 +7,6 @@ namespace kafkaAndDbPairing.Domain.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            
         }
 
         public DbSet<Order> Orders { get; set; }

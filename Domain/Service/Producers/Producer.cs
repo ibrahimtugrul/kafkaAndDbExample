@@ -2,22 +2,22 @@
 
 namespace kafkaAndDbPairing.Domain.Service.Producers
 {
-    public class Producer<TKey, TValue> : Domain.Service.Interfaces.IProducer<TKey, TValue>
+    public class Producer<TKey, TValue> : Interfaces.IProducer<TKey, TValue>
     {
-        private TopicPartitionOffset topicPartitionOffset;
-        private string boostrapServers;
-        private ProducerConfig producerConfig;
+        private readonly TopicPartitionOffset _topicPartitionOffset;
+        private readonly string _boostrapServers;
+        private ProducerConfig _producerConfig;
 
         public Producer(string topicName, int partition, string boostrapServers)
         {
-            this.boostrapServers = boostrapServers;
-            this.topicPartitionOffset = new TopicPartitionOffset(topicName, new Partition(partition), new Offset(0));
+            this._boostrapServers = boostrapServers;
+            this._topicPartitionOffset = new TopicPartitionOffset(topicName, new Partition(partition), new Offset(0));
         }
 
         public Producer(TopicPartitionOffset topicPartitionOffset, string boostrapServers)
         {
-            this.topicPartitionOffset = topicPartitionOffset;
-            this.boostrapServers = boostrapServers;
+            this._topicPartitionOffset = topicPartitionOffset;
+            this._boostrapServers = boostrapServers;
         }
 
         public void Produce(TKey key, TValue value)
@@ -29,9 +29,9 @@ namespace kafkaAndDbPairing.Domain.Service.Producers
 
         private void ProduceMessage(TKey key, TValue value)
         {
-            using var producer = new ProducerBuilder<TKey, TValue>(this.producerConfig).Build();
+            using var producer = new ProducerBuilder<TKey, TValue>(this._producerConfig).Build();
             
-            producer.Produce(this.topicPartitionOffset.Topic, new Message<TKey, TValue>
+            producer.Produce(this._topicPartitionOffset.Topic, new Message<TKey, TValue>
             {
                 Key = key,
                 Value = value
@@ -40,9 +40,9 @@ namespace kafkaAndDbPairing.Domain.Service.Producers
 
         private void CreateConfig()
         {
-            this.producerConfig = new ProducerConfig
+            this._producerConfig = new ProducerConfig
             {
-                BootstrapServers = this.boostrapServers
+                BootstrapServers = this._boostrapServers
             };
         }
     }

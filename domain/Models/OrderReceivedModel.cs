@@ -1,5 +1,4 @@
-﻿
-using kafkaAndDbPairing.Domain.Entity;
+﻿using kafkaAndDbPairing.Domain.Entity;
 
 namespace kafkaAndDbPairing.Domain.Models
 {
