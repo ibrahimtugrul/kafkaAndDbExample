@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
-using Confluent.Kafka;
-using kafkaAndDbPairing.domain.repository;
+﻿using kafkaAndDbPairing.Domain.Repository;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
+using System.Text.Json;
 
 namespace kafkaAndDbPairing.domain.service
 {

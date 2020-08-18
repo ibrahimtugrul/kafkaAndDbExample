@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace kafkaAndDbPairing.domain.service
+﻿namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface IProducer<TKey, TValue>
     {

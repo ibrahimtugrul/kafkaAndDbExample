@@ -1,8 +1,9 @@
-﻿using Confluent.Kafka;
+﻿
+using Confluent.Kafka;
 
-namespace kafkaAndDbPairing.Domain.Service
+namespace kafkaAndDbPairing.Domain.Service.Consumers
 {
-    public class Consumer<TKey, TValue> : IConsumer<TKey, TValue>
+    public class Consumer<TKey, TValue> : Domain.Interfaces.IConsumer<TKey, TValue>
     {
         private readonly ConsumerConfig _config;
         private readonly TopicPartition _topicPartition;

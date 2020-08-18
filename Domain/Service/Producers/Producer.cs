@@ -6,7 +6,7 @@ using Confluent.Kafka;
 
 namespace kafkaAndDbPairing.domain.service
 {
-    public class Producer<TKey, TValue> : IProducer<TKey, TValue>
+    public class Producer<TKey, TValue> : Domain.Service.Interfaces.IProducer<TKey, TValue>
     {
         private TopicPartition topicPartition;
         private string boostrapServers;

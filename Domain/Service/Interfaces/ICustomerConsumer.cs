@@ -1,6 +1,6 @@
-﻿using kafkaAndDbPairing.domain.entity;
+﻿using kafkaAndDbPairing.Domain.Entity;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface ICustomerConsumer
     {

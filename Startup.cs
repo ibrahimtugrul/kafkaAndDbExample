@@ -1,6 +1,9 @@
-using kafkaAndDbPairing.domain.data;
-using kafkaAndDbPairing.domain.repository;
 using kafkaAndDbPairing.domain.service;
+using kafkaAndDbPairing.Domain.Data;
+using kafkaAndDbPairing.Domain.Repository;
+using kafkaAndDbPairing.Domain.Service;
+using kafkaAndDbPairing.Domain.Service.Consumers;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

@@ -1,8 +1,8 @@
-﻿using kafkaAndDbPairing.domain.Models;
-using kafkaAndDbPairing.domain.repository;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Models;
+using kafkaAndDbPairing.Domain.Repository;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 using System.Text.Json;
-using Confluent.Kafka;
-using kafkaAndDbPairing.domain.entity;
 
 namespace kafkaAndDbPairing.domain.service
 {

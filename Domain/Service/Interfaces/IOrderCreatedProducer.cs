@@ -1,7 +1,7 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using kafkaAndDbPairing.Domain.Entity;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface IOrderCreatedProducer
     {

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace kafkaAndDbPairing.Domain.Data
 {
@@ -9,12 +10,12 @@ namespace kafkaAndDbPairing.Domain.Data
             
         }
 
-        public DbSet<kafkaAndDbPairing.domain.entity.Order> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
-        public DbSet<kafkaAndDbPairing.domain.entity.Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
-        public DbSet<kafkaAndDbPairing.domain.entity.OrderDetail> OrderDetails { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
-        public DbSet<kafkaAndDbPairing.domain.entity.OrderLog> OrderLogs { get; set; }
+        public DbSet<OrderLog> OrderLogs { get; set; }
     }
 }

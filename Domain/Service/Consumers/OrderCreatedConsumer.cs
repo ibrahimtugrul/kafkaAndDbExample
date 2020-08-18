@@ -1,9 +1,9 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using kafkaAndDbPairing.domain.repository;
-using System;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Repository;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 using System.Threading.Tasks;
 
-namespace kafkaAndDbPairing.Domain.Service
+namespace kafkaAndDbPairing.Domain.Service.Consumers
 {
     public class OrderCreatedConsumer : IOrderCreatedConsumer
     {

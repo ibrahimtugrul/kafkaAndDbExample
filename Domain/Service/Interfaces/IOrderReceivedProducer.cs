@@ -1,4 +1,4 @@
-﻿namespace kafkaAndDbPairing.domain.service
+﻿namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface IOrderReceivedProducer
     {

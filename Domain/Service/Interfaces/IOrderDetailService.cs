@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.entity;
+﻿using System.Collections.Generic;
+using kafkaAndDbPairing.Domain.Entity;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface IOrderDetailService
     {

@@ -1,7 +1,8 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using System.Text.Json;
+﻿using System.Text.Json;
+using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 
-namespace kafkaAndDbPairing.Domain.Service
+namespace kafkaAndDbPairing.Domain.Service.Consumers
 {
     public class CustomerConsumer : ICustomerConsumer
     {

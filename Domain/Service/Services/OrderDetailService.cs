@@ -1,10 +1,9 @@
-﻿using System;
+﻿using kafkaAndDbPairing.Domain.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.entity;
-using kafkaAndDbPairing.domain.repository;
+using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Repository;
 
 namespace kafkaAndDbPairing.domain.service
 {

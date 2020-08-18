@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace kafkaAndDbPairing.domain.service
+﻿namespace kafkaAndDbPairing.Domain.Interfaces
 {
     public interface IConsumer<TKey, out TValue>
     {

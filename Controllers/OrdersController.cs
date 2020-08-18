@@ -1,8 +1,8 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using kafkaAndDbPairing.domain.service;
+﻿using kafkaAndDbPairing.Domain.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using kafkaAndDbPairing.Domain.Entity;
 
 namespace kafkaAndDbPairing.Controllers
 {

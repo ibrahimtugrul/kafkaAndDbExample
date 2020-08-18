@@ -1,5 +1,6 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using kafkaAndDbPairing.domain.repository;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Repository;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 using System;
 using System.Threading.Tasks;
 

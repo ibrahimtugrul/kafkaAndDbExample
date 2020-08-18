@@ -1,7 +1,8 @@
-﻿using System.Text.Json;
-using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.entity;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using kafkaAndDbPairing.Domain.Service.Interfaces;
 using System;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace kafkaAndDbPairing.domain.service
 {

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using kafkaAndDbPairing.Domain.Data;
+using kafkaAndDbPairing.Domain.Entity;
 
 namespace kafkaAndDbPairing.Domain.Repository
 {
