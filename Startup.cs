@@ -5,6 +5,7 @@ using kafkaAndDbPairing.Domain.Service;
 using kafkaAndDbPairing.Domain.Service.Consumers;
 using kafkaAndDbPairing.Domain.Service.Interfaces;
 using kafkaAndDbPairing.Domain.Service.Producers;
+using kafkaAndDbPairing.Domain.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

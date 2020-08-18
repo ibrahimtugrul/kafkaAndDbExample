@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using kafkaAndDbPairing.Domain.Interfaces;
 
 namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
-    public interface IOrderCreatedConsumer
+    public interface IOrderCreatedConsumer : IConsumer<string, string>
     {
-        Task ConsumeAsync();
     }
 }

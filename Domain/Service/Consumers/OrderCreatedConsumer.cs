@@ -1,7 +1,6 @@
 ﻿using kafkaAndDbPairing.Domain.Entity;
 using kafkaAndDbPairing.Domain.Repository;
 using kafkaAndDbPairing.Domain.Service.Interfaces;
-using System.Threading.Tasks;
 
 namespace kafkaAndDbPairing.Domain.Service.Consumers
 {
@@ -14,7 +13,7 @@ namespace kafkaAndDbPairing.Domain.Service.Consumers
             _orderLogRepository = orderLogRepository;
         }
 
-        public async Task ConsumeAsync()
+        public string Consume()
         {
             var consumer = new Consumer<string, string>("OrderCreatedEvent", 5, "localhost:9092");
             
@@ -25,7 +24,11 @@ namespace kafkaAndDbPairing.Domain.Service.Consumers
                 Event = result
             };
 
-            await _orderLogRepository.CreateOrderLog(orderLog);
+            // Do not mix this Wait call with await operators!
+            // It might cause a deadlock
+            _orderLogRepository.CreateOrderLog(orderLog).Wait();
+
+            return result;
         }
     }
 }

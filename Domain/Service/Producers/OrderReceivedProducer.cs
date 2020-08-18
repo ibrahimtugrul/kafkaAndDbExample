@@ -25,7 +25,7 @@ namespace kafkaAndDbPairing.domain.service
 
             var orderReceivedModel = new OrderReceivedModel
             {
-                Customer = customer,
+                Customer = JsonSerializer.Deserialize<Customer>(customer),
                 Order = JsonSerializer.Deserialize<Order>(orderLog.Event)
             };
             var producer = new Producer<string, string>("OrderReceivedEvent", 0, "localhost:9092");

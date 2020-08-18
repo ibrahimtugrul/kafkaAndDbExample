@@ -1,9 +1,8 @@
-﻿using kafkaAndDbPairing.Domain.Entity;
+﻿using kafkaAndDbPairing.Domain.Interfaces;
 
 namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
-    public interface ICustomerConsumer
+    public interface ICustomerConsumer : IConsumer<string, string>
     {
-        Customer Consume();
     }
 }

@@ -1,10 +1,10 @@
-﻿using kafkaAndDbPairing.Domain.Entity;
+﻿using System;
+using System.Threading.Tasks;
+using kafkaAndDbPairing.Domain.Entity;
 using kafkaAndDbPairing.Domain.Repository;
 using kafkaAndDbPairing.Domain.Service.Interfaces;
-using System;
-using System.Threading.Tasks;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service.Services
 {
     public class OrderService : IOrderService
     {
@@ -28,9 +28,10 @@ namespace kafkaAndDbPairing.domain.service
 
             var createdOrder = await _orderRepository.CreateOrderAsync(order);
 
-            await _orderCreatedProducer.Produce(createdOrder);
+            _orderCreatedProducer.Produce(createdOrder);
 
-            await _orderCreatedConsumer.ConsumeAsync();
+            // It is ignored for now.
+            var result = _orderCreatedConsumer.Consume();
 
             return createdOrder;
         }
