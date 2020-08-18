@@ -3,7 +3,7 @@ using kafkaAndDbPairing.domain.repository;
 using System;
 using System.Threading.Tasks;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service
 {
     public class OrderCreatedConsumer : IOrderCreatedConsumer
     {

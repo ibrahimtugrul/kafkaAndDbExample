@@ -1,8 +1,8 @@
-﻿using kafkaAndDbPairing.domain.data;
-using kafkaAndDbPairing.domain.entity;
+﻿using kafkaAndDbPairing.Domain.Data;
+using kafkaAndDbPairing.Domain.Entity;
 using System.Linq;
 
-namespace kafkaAndDbPairing.domain.repository
+namespace kafkaAndDbPairing.Domain.Repository
 {
     public class CustomerRepository : ICustomerRepository
     {

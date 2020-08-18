@@ -1,7 +1,6 @@
-﻿using System;
-using Confluent.Kafka;
+﻿using Confluent.Kafka;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service
 {
     public class Consumer<TKey, TValue> : IConsumer<TKey, TValue>
     {
@@ -28,7 +27,7 @@ namespace kafkaAndDbPairing.domain.service
             consumer.Assign(_topicPartition);
 
             var result = consumer.Consume();
-
+            
             if (result.IsPartitionEOF)
                 return default;
 

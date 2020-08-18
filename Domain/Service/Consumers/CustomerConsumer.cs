@@ -1,7 +1,7 @@
 ﻿using kafkaAndDbPairing.domain.entity;
 using System.Text.Json;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service
 {
     public class CustomerConsumer : ICustomerConsumer
     {

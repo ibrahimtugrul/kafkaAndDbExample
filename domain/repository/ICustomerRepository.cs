@@ -1,7 +1,6 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
-using kafkaAndDbPairing.domain.entity;
+﻿using kafkaAndDbPairing.Domain.Entity;
 
-namespace kafkaAndDbPairing.domain.repository
+namespace kafkaAndDbPairing.Domain.Repository
 {
     public interface ICustomerRepository
     {

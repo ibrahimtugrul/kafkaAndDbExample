@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace kafkaAndDbPairing.domain.data
+namespace kafkaAndDbPairing.Domain.Data
 {
     public class DataContext : DbContext
     {

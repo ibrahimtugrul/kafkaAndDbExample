@@ -1,11 +1,10 @@
-﻿using kafkaAndDbPairing.domain.entity;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.data;
+using kafkaAndDbPairing.Domain.Data;
+using kafkaAndDbPairing.Domain.Entity;
 
-namespace kafkaAndDbPairing.domain.repository
+namespace kafkaAndDbPairing.Domain.Repository
 {
     public class OrderDetailRepository : IOrderDetailRepository
     {

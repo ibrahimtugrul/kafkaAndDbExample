@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using kafkaAndDbPairing.Domain.Entity;
 using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.entity;
 
-namespace kafkaAndDbPairing.domain.repository
+namespace kafkaAndDbPairing.Domain.Repository
 {
     public interface IOrderLogRepository
     {

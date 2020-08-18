@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using kafkaAndDbPairing.domain.entity;
+﻿using kafkaAndDbPairing.Domain.Entity;
+using System.Threading.Tasks;
 
-namespace kafkaAndDbPairing.domain.repository
+namespace kafkaAndDbPairing.Domain.Repository
 {
     public interface IOrderRepository
     {
