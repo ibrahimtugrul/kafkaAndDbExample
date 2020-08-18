@@ -1,6 +1,6 @@
-﻿using kafkaAndDbPairing.Domain.Interfaces;
+﻿using KafkaDbPairProject.Domain.Interfaces;
 
-namespace kafkaAndDbPairing.Domain.Service.Interfaces
+namespace KafkaDbPairProject.Domain.Service.Interfaces
 {
     public interface ICustomerConsumer : IConsumer<string, string>
     {

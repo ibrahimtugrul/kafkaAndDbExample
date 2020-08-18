@@ -1,4 +1,4 @@
-﻿namespace kafkaAndDbPairing.Domain.Service.Interfaces
+﻿namespace KafkaDbPairProject.Domain.Service.Interfaces
 {
     public interface ICustomerProducer
     {

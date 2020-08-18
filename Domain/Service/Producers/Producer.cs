@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 
-namespace kafkaAndDbPairing.Domain.Service.Producers
+namespace KafkaDbPairProject.Domain.Service.Producers
 {
     public class Producer<TKey, TValue> : Interfaces.IProducer<TKey, TValue>
     {

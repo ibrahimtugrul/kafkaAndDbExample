@@ -1,7 +1,7 @@
-﻿using kafkaAndDbPairing.Domain.Entity;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using KafkaDbPairProject.Domain.Entity;
 
-namespace kafkaAndDbPairing.Domain.Repository
+namespace KafkaDbPairProject.Domain.Repository
 {
     public interface IOrderRepository
     {

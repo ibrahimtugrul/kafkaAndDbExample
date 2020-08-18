@@ -1,4 +1,4 @@
-﻿namespace kafkaAndDbPairing.Contract.Request
+﻿namespace KafkaDbPairProject.Contract.Request
 {
     public class ProductCreateRequest
     {

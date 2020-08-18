@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 using Confluent.Kafka;
-using kafkaAndDbPairing.Domain.Entity;
-using kafkaAndDbPairing.domain.service;
-using kafkaAndDbPairing.Domain.Service.Interfaces;
+using KafkaDbPairProject.domain.service;
+using KafkaDbPairProject.Domain.Entity;
+using KafkaDbPairProject.Domain.Service.Interfaces;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace kafkaAndDbPairing.Domain.Service.Producers
+namespace KafkaDbPairProject.Domain.Service.Producers
 {
     public class OrderCreatedProducer : IOrderCreatedProducer
     {

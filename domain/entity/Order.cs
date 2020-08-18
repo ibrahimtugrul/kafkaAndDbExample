@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace kafkaAndDbPairing.Domain.Entity
+namespace KafkaDbPairProject.Domain.Entity
 {
     public class Order
     {

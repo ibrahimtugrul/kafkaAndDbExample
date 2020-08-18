@@ -1,6 +1,6 @@
-﻿using kafkaAndDbPairing.Domain.Entity;
+﻿using KafkaDbPairProject.Domain.Entity;
 
-namespace kafkaAndDbPairing.Domain.Models
+namespace KafkaDbPairProject.Domain.Models
 {
     public class OrderReceivedModel
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using kafkaAndDbPairing.Domain.Entity;
+using KafkaDbPairProject.Domain.Entity;
 
-namespace kafkaAndDbPairing.Domain.Service.Interfaces
+namespace KafkaDbPairProject.Domain.Service.Interfaces
 {
     public interface IOrderDetailService
     {

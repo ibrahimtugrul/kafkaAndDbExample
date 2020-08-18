@@ -1,4 +1,4 @@
-﻿namespace kafkaAndDbPairing.Domain.Service.Interfaces
+﻿namespace KafkaDbPairProject.Domain.Service.Interfaces
 {
     public interface IProducer<TKey, TValue>
     {

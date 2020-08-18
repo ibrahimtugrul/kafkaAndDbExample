@@ -1,11 +1,11 @@
-using kafkaAndDbPairing.domain.service;
-using kafkaAndDbPairing.Domain.Data;
-using kafkaAndDbPairing.Domain.Repository;
-using kafkaAndDbPairing.Domain.Service;
-using kafkaAndDbPairing.Domain.Service.Consumers;
-using kafkaAndDbPairing.Domain.Service.Interfaces;
-using kafkaAndDbPairing.Domain.Service.Producers;
-using kafkaAndDbPairing.Domain.Service.Services;
+using KafkaDbPairProject.Domain.Service;
+using KafkaDbPairProject.Domain.Data;
+using KafkaDbPairProject.Domain.Repository;
+using KafkaDbPairProject.domain.service;
+using KafkaDbPairProject.Domain.Service.Consumers;
+using KafkaDbPairProject.Domain.Service.Interfaces;
+using KafkaDbPairProject.Domain.Service.Producers;
+using KafkaDbPairProject.Domain.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace kafkaAndDbPairing
+namespace KafkaDbPairProject
 {
     public class Startup
     {

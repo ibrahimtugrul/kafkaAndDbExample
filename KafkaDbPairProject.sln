@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kafkaAndDbPairing", "kafkaAndDbPairing.csproj", "{708625B4-E21B-43B8-B925-958357ED69F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaDbPairProject", "KafkaDbPairProject.csproj", "{708625B4-E21B-43B8-B925-958357ED69F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,10 +1,10 @@
-﻿using kafkaAndDbPairing.Domain.Service.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using kafkaAndDbPairing.Domain.Entity;
+using KafkaDbPairProject.Domain.Entity;
+using KafkaDbPairProject.Domain.Service.Interfaces;
 
-namespace kafkaAndDbPairing.Controllers
+namespace KafkaDbPairProject.Controllers
 {
     [Route("orders/")]
     public class OrdersController : ControllerBase

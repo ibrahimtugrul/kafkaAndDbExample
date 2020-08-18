@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 
-namespace kafkaAndDbPairing.Domain.Service.Consumers
+namespace KafkaDbPairProject.Domain.Service.Consumers
 {
     public class Consumer<TKey, TValue> : Domain.Interfaces.IConsumer<TKey, TValue>
     {

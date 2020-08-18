@@ -1,11 +1,11 @@
-﻿using kafkaAndDbPairing.Domain.Entity;
-using kafkaAndDbPairing.Domain.Models;
-using kafkaAndDbPairing.Domain.Repository;
-using kafkaAndDbPairing.Domain.Service.Interfaces;
-using System.Text.Json;
-using kafkaAndDbPairing.Domain.Service.Producers;
+﻿using System.Text.Json;
+using KafkaDbPairProject.Domain.Entity;
+using KafkaDbPairProject.Domain.Models;
+using KafkaDbPairProject.Domain.Repository;
+using KafkaDbPairProject.Domain.Service.Interfaces;
+using KafkaDbPairProject.Domain.Service.Producers;
 
-namespace kafkaAndDbPairing.domain.service
+namespace KafkaDbPairProject.domain.service
 {
     public class OrderReceivedProducer : IOrderReceivedProducer
     {

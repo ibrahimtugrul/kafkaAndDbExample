@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace kafkaAndDbPairing.Domain.Entity
+namespace KafkaDbPairProject.Domain.Entity
 {
     public class Customer
     {
