@@ -5,6 +5,6 @@ namespace kafkaAndDbPairing.Domain.Service.Interfaces
 {
     public interface IOrderCreatedProducer
     {
-        Task<bool> Produce(Order order);
+        bool Produce(Order order);
     }
 }

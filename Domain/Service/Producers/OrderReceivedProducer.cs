@@ -3,6 +3,7 @@ using kafkaAndDbPairing.Domain.Models;
 using kafkaAndDbPairing.Domain.Repository;
 using kafkaAndDbPairing.Domain.Service.Interfaces;
 using System.Text.Json;
+using kafkaAndDbPairing.Domain.Service.Producers;
 
 namespace kafkaAndDbPairing.domain.service
 {

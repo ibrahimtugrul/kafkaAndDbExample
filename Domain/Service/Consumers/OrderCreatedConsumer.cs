@@ -17,7 +17,7 @@ namespace kafkaAndDbPairing.Domain.Service.Consumers
         public async Task ConsumeAsync()
         {
             var consumer = new Consumer<string, string>("OrderCreatedEvent", 5, "localhost:9092");
-
+            
             var result = consumer.Consume();
 
             var orderLog = new OrderLog

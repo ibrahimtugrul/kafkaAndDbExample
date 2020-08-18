@@ -1,39 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Confluent.Kafka;
+﻿using Confluent.Kafka;
 
-namespace kafkaAndDbPairing.domain.service
+namespace kafkaAndDbPairing.Domain.Service.Producers
 {
     public class Producer<TKey, TValue> : Domain.Service.Interfaces.IProducer<TKey, TValue>
     {
-        private TopicPartition topicPartition;
+        private TopicPartitionOffset topicPartitionOffset;
         private string boostrapServers;
         private ProducerConfig producerConfig;
 
         public Producer(string topicName, int partition, string boostrapServers)
         {
             this.boostrapServers = boostrapServers;
-            this.topicPartition = new TopicPartition(topicName, new Partition(partition));
+            this.topicPartitionOffset = new TopicPartitionOffset(topicName, new Partition(partition), new Offset(0));
+        }
+
+        public Producer(TopicPartitionOffset topicPartitionOffset, string boostrapServers)
+        {
+            this.topicPartitionOffset = topicPartitionOffset;
+            this.boostrapServers = boostrapServers;
         }
 
         public void Produce(TKey key, TValue value)
         {
             CreateConfig();
+
             ProduceMessage(key, value);
         }
 
         private void ProduceMessage(TKey key, TValue value)
         {
-            using (var producer = new ProducerBuilder<TKey, TValue>(this.producerConfig).Build())
+            using var producer = new ProducerBuilder<TKey, TValue>(this.producerConfig).Build();
+            
+            producer.Produce(this.topicPartitionOffset.Topic, new Message<TKey, TValue>
             {
-                producer.Produce(this.topicPartition, new Message<TKey, TValue>()
-                {
-                    Key = key,
-                    Value = value
-                });
-            }
+                Key = key,
+                Value = value
+            });
         }
 
         private void CreateConfig()
